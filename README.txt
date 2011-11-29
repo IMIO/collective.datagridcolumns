@@ -38,6 +38,37 @@ Example::
                      ),
             ),
 
+SelectColumn
+------------
+
+Like the default *SelectColumn* from DataGridField product, but explicitly support the
+``vocabulary_factory`` way to provide vocabularies.
+
+Additional parameters:
+
+``vocabulary_factory``
+    Provide the name of a registered vocabulary using a Zope Component Utility. See the
+    Archetypes Develop Manual for more.
+``vocabulary``
+    As default SelectColumn, required only if you don't provide ``vocabulary_factory``.
+    Use this to call a method on the context to obtain the vocabulary.
+
+Example::
+
+            DataGridField('foo',
+                      columns=("type", "description"),
+                      widget = DataGridWidget(
+                                columns={
+                                     'type' : SelectColumn(_(u"Type"),
+                                                           vocabulary_factory='plone.app.vocabularies.PortalTypes'),
+                                     'description' : Column(_(u"Description"),),
+                                },
+                     ),
+            ),
+
+**Note**: the base *SelectColumn* of DataGridField 1.8 already have some kind of support for Zope-3-like vocabularies,
+however the use of it is not clean.
+
 Dependencies
 ============
 
@@ -56,4 +87,4 @@ This product was developed by RedTurtle Technology team.
 Contribute!
 -----------
 
-You are welcome to help us contribute adding new columns if you like!
+You are *welcome* to help us, contributing and adding new columns!
