@@ -12,6 +12,7 @@ setup(name='collective.datagridcolumns',
       # http://pypi.python.org/pypi?:action=list_classifiers
       classifiers=[
         "Framework :: Plone",
+        "Framework :: Plone :: 3.3",
         "Programming Language :: Python",
         ],
       keywords='plonegov plone datagridfield archetypes',
