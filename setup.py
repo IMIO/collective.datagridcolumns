@@ -1,7 +1,15 @@
 from setuptools import setup, find_packages
-import os
+import os, sys
 
 version = '0.1.0'
+
+install_requires = [
+    'setuptools',
+    'Products.DataGridField',
+    ]
+
+if sys.version_info < (2, 6):
+    install_requires.append('simplejson')
 
 setup(name='collective.datagridcolumns',
       version=version,
@@ -24,11 +32,7 @@ setup(name='collective.datagridcolumns',
       namespace_packages=['collective'],
       include_package_data=True,
       zip_safe=False,
-      install_requires=[
-          'setuptools',
-          'Products.DataGridField',
-          # -*- Extra requirements: -*-
-      ],
+      install_requires=install_requires,
       entry_points="""
       [z3c.autoinclude.plugin]
       target = plone

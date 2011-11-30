@@ -5,9 +5,7 @@
       i18n:domain="plone">
       
       
-<!-- View/edit free text columns 
- 
-  -->
+<!-- View/edit free textarea columns -->
 
 <body>
     <!-- VIEW -->
