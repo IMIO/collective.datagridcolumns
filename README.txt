@@ -120,7 +120,9 @@ When using autocomplete text field, you can query Plone in two different way:
   surf the whole site.
 * starting as query with other character will perform a full-text query on titles.
 
-Please, read also the "Dependencies" section below.
+This will required `jQueryUI autocomplete`__. Please, read also the "Dependencies" section below.
+
+__ http://jqueryui.com/demos/autocomplete/
 
 Additional parameters:
 
@@ -137,11 +139,13 @@ Plone 4 and DataGridField 1.8 are welcome!
 jQueryUI
 --------
 
-A column above need that Plone provide jQueryUI features. This product *will not* provide this
-requirement.
+A column above need that Plone provide jQueryUI library. This product *will not* cover this
+requirement, even by dependency.
+
 If you have already jQueryUI autocomplete behaviour in your Plone site, you are already ok.
 
-If you need it, take a look at `collective.jqueryui.autocomplete`__ (or read it's documentation page).
+If you need it, take a look at `collective.jqueryui.autocomplete`__ (or read it's documentation page
+to understand how cover this need).
 
 __ http://plone.org/products/collective.jqueryui.autocomplete
 
