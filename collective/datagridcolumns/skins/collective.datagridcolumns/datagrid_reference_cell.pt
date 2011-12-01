@@ -23,12 +23,14 @@
 	<!-- EDIT COMMONS -->
 	<metal:edit_cell_macro define-macro="edit_common">
 		<div style="display:none" class="edit_common"
-		     tal:attributes="data-context-call python:column_definition.getAJAXCallingContext(context)">
+		     tal:attributes="data-context-call python:column_definition.getAJAXCallingContext(context);
+			                 data-object-provides column_definition/getAllowedInterfaces;">
 		</div>
 	</metal:edit_cell_macro>
 
     <!-- EDIT -->
-    <metal:edit_cell_macro define-macro="edit_cell">
+    <metal:edit_cell_macro define-macro="edit_cell"
+	   tal:define="target python:column_definition.getTarget(context, cell_value);">
        <tal:view_row metal:use-macro="here/datagrid_reference_cell/macros/edit_common"/>
        <input name="myfield.name:records" 
               tal:attributes="name string:${fieldName}.${column}:records;
@@ -40,7 +42,7 @@
 	          class="dataGridAutocompleteColumn"
 	          style="width: 100%" 
               tal:attributes="name string:model-${fieldName}.${column}:records;
-                              value python: column_definition.getTarget(context, cell_value).Title();
+                              value python: target and target.Title() or '';
                               "
                        type="text" />
     </metal:edit_cell_macro>
@@ -60,7 +62,7 @@
 	          class="dataGridAutocompleteColumn"
 	          style="width: 100%" 
               tal:attributes="name string:model-${fieldName}.${column}:records;
-                              value python:defaultTarget and defaultTarget.Title() or nothing;
+                              value python:defaultTarget and defaultTarget.Title() or '';
                               "
                        type="text" />
     </metal:edit_empty_cell_macro>

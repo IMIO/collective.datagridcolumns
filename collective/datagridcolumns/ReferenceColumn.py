@@ -19,8 +19,9 @@ class ReferenceColumn(Column):
 
     security = ClassSecurityInfo()
 
-    def __init__(self, label, default=None):
+    def __init__(self, label, default=None, object_provides=[]):
         Column.__init__(self, label, default=default)
+        self.object_provides = object_provides
 
     security.declarePublic('getAJAXCallingContext')
     def getAJAXCallingContext(self, context):
@@ -37,7 +38,9 @@ class ReferenceColumn(Column):
         reference_catalog = getToolByName(context, 'reference_catalog')
         return reference_catalog.lookupObject(cell_value)
 
-        
+    security.declarePublic('getAllowedInterfaces')
+    def getAllowedInterfaces(self):
+        """ Return the a proper comma separated strings of object_provides values """
+        return ','.join(self.object_provides)
 
-# Initializes class security
 InitializeClass(ReferenceColumn)
