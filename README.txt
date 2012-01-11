@@ -70,8 +70,8 @@ Example::
     ),
     ...
 
-**Note**: the base *SelectColumn* of DataGridField 1.8 already have some kind of support for Zope-3-like vocabularies,
-however the use of it is not clean (and *this* version also works on Plone 3).
+**Note**: the base *SelectColumn* of DataGridField 1.8 already have some kind of support for Zope-3-like
+vocabularies, however the use of it is not clean (and *this* version also works on Plone 3).
 
 ReferenceColumn
 ---------------
@@ -129,6 +129,12 @@ Additional parameters:
 ``object_provides``
     When using the full-text query, only return results of objects that provide those interfaces.
     Default is an empty list (no filter).
+``surf_site``
+    Choose to be able to surf the site tree using a "/dir/dir/..." term.
+    Default to True (allowed).
+``search_site``
+    Choose to be able to search items in the site by full-text query or not.
+    Default to True (allowed).
 
 Dependencies
 ============

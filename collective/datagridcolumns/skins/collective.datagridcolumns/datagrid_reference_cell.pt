@@ -24,7 +24,9 @@
 	<metal:edit_cell_macro define-macro="edit_common">
 		<div style="display:none" class="edit_common"
 		     tal:attributes="data-context-call python:column_definition.getAJAXCallingContext(context);
-			                 data-object-provides column_definition/getAllowedInterfaces;">
+			                 data-object-provides column_definition/getAllowedInterfaces;
+							 data-surf-site python:column_definition.surfSite() and 'true' or '';
+							 data-search-site python:column_definition.searchSite() and 'true' or '';">
 		</div>
 	</metal:edit_cell_macro>
 

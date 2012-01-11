@@ -29,10 +29,22 @@ if (!window.DATAGRIDFIELD_REFERENCE_ENABLED) {
 				var object_provides = configuration.attr('data-object-provides');
 				if (object_provides) {
 					object_provides = object_provides.split(',');
-					contextCall += '?';
 					for (i = 0; i < object_provides.length; i++) {
 						query.push('object_provides:list=' + object_provides[i]);
 					}
+				}
+
+				var search_site = configuration.attr('data-search-site');
+				var surf_site = configuration.attr('data-surf-site');
+				if (search_site) {
+					query.push('search_site=1');
+				}
+				if (surf_site) {
+					query.push('surf_site=1');
+				}
+
+				if (query) {
+					contextCall += '?';
 					contextCall += query.join('&');
 				}
 
