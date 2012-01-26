@@ -1,6 +1,12 @@
 Changelog
 =========
 
+0.2.0 (Unreleased)
+------------------
+
+* Added an alternative jQuery library, installable using a separate
+  Generic Setup profile [keul] 
+
 0.1.1 (2012-01-12)
 ------------------
 

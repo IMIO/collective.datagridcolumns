@@ -19,5 +19,14 @@
       description="Additional columns type for DataGridField"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
+
+  <genericsetup:registerProfile
+      name="jquery"
+      title="DataGridField: register jQuery 1.4"
+      directory="profiles/jquery"
+      description="Register a working jQuery 1.4 resource, and disable the standard Plone ones"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
   
 </configure>

@@ -11,4 +11,10 @@
 	 permission="zope2.View"
 	 />
 
+  <browser:resource
+	 name="jquery-1.4.js"
+	 file="jquery-1.4.4.min.js"
+	 />
+
+
 </configure>

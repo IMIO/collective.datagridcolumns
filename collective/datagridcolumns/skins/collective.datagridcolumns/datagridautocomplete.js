@@ -13,7 +13,6 @@ if (!window.DATAGRIDFIELD_REFERENCE_ENABLED) {
 	 * (if we have more than one ReferenceColumn in a page
 	 */
 	window.DATAGRIDFIELD_REFERENCE_ENABLED = true;
-
 	jq(document).ready(function () {
 		/**
 		 * The first time we get the focus, we will enable the autocomplete 

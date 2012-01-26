@@ -142,6 +142,18 @@ Dependencies
 This product has been tested on *Plone 3.3* and *DataGridField 1.6*. Tests and feedback with
 Plone 4 and DataGridField 1.8 are welcome!
 
+jQuery
+------
+
+The *ReferenceColumn* need jQuery 1.4.1 or better to work. Plone 3.3 is shipped with jQuery
+1.3. You can fix this dependency by your how, or using a 3rd party library.
+
+An alternative Generic Setup import step ("*DataGridField: register jQuery 1.4*") is provided
+with the product. Run this and the default Plone jQuery version will be disabled, then a
+1.4 version will be registered.
+
+**Do not run this** on Plone 4! 
+
 jQueryUI
 --------
 
