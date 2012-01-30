@@ -3,6 +3,7 @@
 from zope.component import getUtility
 
 from zope.component.interfaces import ComponentLookupError
+from zope.component import getMultiAdapter
 from zope import schema
 
 from AccessControl import ClassSecurityInfo
@@ -13,6 +14,8 @@ from Products.CMFCore.utils import getToolByName
 from Products.Archetypes import atapi
 
 from Products.DataGridField.Column import Column
+
+from collective.datagridcolumns.interfaces import ICallingContextProvider
 
 class ReferenceColumn(Column):
     """ Defines column with that will contains an UID, that reference another content """
@@ -27,7 +30,7 @@ class ReferenceColumn(Column):
 
     security.declarePublic('getAJAXCallingContext')
     def getAJAXCallingContext(self, context):
-        return getToolByName(context, 'portal_url')()
+        return getMultiAdapter((context, context.REQUEST), ICallingContextProvider).url
     
     security.declarePublic('getMacro')
     def getMacro(self):

@@ -9,6 +9,10 @@
   <five:registerPackage package="." initialize=".initialize" />
   <include package=".browser" />
 
+  <adapter for="* zope.publisher.interfaces.browser.IBrowserRequest"
+       provides=".interfaces.ICallingContextProvider"
+       factory=".calling_content_provider.SimpleCallingContextProvider" />
+
   <cmf:registerDirectory
      name="collective.datagridcolumns"/>
 

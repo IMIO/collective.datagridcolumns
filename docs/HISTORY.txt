@@ -4,8 +4,12 @@ Changelog
 0.2.0 (Unreleased)
 ------------------
 
-* Added an alternative jQuery library, installable using a separate
-  Generic Setup profile [keul] 
+* ReferenceColumn - added an alternative jQuery library, installable using a separate
+  Generic Setup profile [keul]
+* ReferenceColumn - fulltext search is now restricted to the path of the calling context [keul]
+* ReferenceColumn - URL where to perform AJAX call is taken from a ``ICallingContextProvider``
+  adapter. 3rd party products can provide a more specific one than the default (that still
+  call the portal url) [keul]
 
 0.1.1 (2012-01-12)
 ------------------

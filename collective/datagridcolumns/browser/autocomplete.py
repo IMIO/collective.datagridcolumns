@@ -50,9 +50,11 @@ class DataGridAutocompleteView(BrowserView):
         # FULLTEXT search
         elif term and search_site: # term must be something
             terms = term.strip().split()
+            path = '/'.join(context.getPhysicalPath())
             kwargs = {'Title': ' AND '.join(["%s*" % x for x in terms]),
                       'sort_on': 'sortable_title',
-                      'sort_order': 'reverse'}
+                      'sort_order': 'reverse',
+                      'path': path}
             if object_provides:
                 kwargs['object_provides'] = object_provides
             results = catalog(**kwargs)
