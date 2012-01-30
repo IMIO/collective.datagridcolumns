@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.2.0 (Unreleased)
+0.2.0 (2012-01-30)
 ------------------
 
 * ReferenceColumn - added an alternative jQuery library, installable using a separate
