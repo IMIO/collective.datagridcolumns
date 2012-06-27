@@ -14,7 +14,7 @@ if sys.version_info < (2, 6):
 setup(name='collective.datagridcolumns',
       version=version,
       description="Additional columns for Plone and DataGridField",
-      long_description=open("README.txt").read() + "\n" +
+      long_description=open("README.rst").read() + "\n" +
                        open(os.path.join("docs", "HISTORY.txt")).read(),
       # Get more strings from
       # http://pypi.python.org/pypi?:action=list_classifiers
