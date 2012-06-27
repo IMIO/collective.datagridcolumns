@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.3.1 (unreleased)
+0.3.1 (2012-06-27)
 ------------------
 
 * Fixed manifest and readme [cekk]
