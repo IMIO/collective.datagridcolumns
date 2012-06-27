@@ -1,4 +1,4 @@
 global-include *.txt
 global-include *.rst
 recursive-include docs *
-recursive-include rer *
+recursive-include collective *
