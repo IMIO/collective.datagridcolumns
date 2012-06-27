@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.3.0 (unreleased)
+0.3.0 (2012-06-27)
 ------------------
 
 * ReferenceColumn - added base Column default paremeters: ``default_method``, ``label_msgid``, ``required`` [cekk]
