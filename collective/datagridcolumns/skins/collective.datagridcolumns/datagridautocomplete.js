@@ -20,6 +20,10 @@ if (!window.DATAGRIDFIELD_REFERENCE_ENABLED) {
 		jq('.dataGridAutocompleteColumn').live('focus', function () {
 			var $this = jq(this);
 			if (!$this.data('autocompleteEnabled')) {
+				if (window.console && window.console.info) {
+					window.console.info('Autocomplete enabled onto field');
+					window.console.log($this);
+				}
 				$this.data('autocompleteEnabled', true);
 				var configuration = $this.prevAll('.edit_common');
 				var contextCall = configuration.attr('data-context-call') + '/dataGridAutocomplete';
