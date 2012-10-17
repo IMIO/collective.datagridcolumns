@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.3.2 (unreleased)
+0.3.2 (2012-10-17)
 ------------------
 
 - Fixed a bug introduced with version 0.3. See `#1`__ [keul]
