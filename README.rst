@@ -136,6 +136,35 @@ Additional parameters:
     Choose to be able to search items in the site by full-text query or not.
     Default to True (allowed).
 
+
+DateColumn
+--------------
+
+A simple column field that allows to insert some dates. This field supports jqueryui's datepicker plugin.
+
+To use js datepicker plugin, you need to enable datepicker plugin of jqueryui (see above for infos) add an helper_js in the widget, like in the following example.
+
+Additional parameters:
+
+``date_format``
+    Default: yy/mm/dd. The date format to store in the field.
+
+Example::
+
+    ...
+    DataGridField('foo',
+              columns=("name", "birthday"),
+              widget = DataGridWidget(
+                        helper_js= ('datagridwidget.js', 'datagriddatepicker.js'),
+                        columns={
+                             'name' : Column(_(u"Name")),
+                             'birthday' : DateColumn(_(u"Birthday"),
+                                                            date_format="dd/mm/yy"),
+                        },
+             ),
+    ),
+    ...
+
 Dependencies
 ============
 
@@ -157,10 +186,10 @@ with the product. Run this and the default Plone jQuery version will be disabled
 jQueryUI
 --------
 
-A column above need that Plone provide jQueryUI library. This product *will not* cover this
+ReferenceColumn and DateColumn needs that Plone provide jQueryUI library. This product *will not* cover this
 requirement, even by dependency.
 
-If you have already jQueryUI autocomplete behaviour in your Plone site, you are already ok.
+If you have already jQueryUI (autocomplete or datepicker) behaviour in your Plone site, you are already ok.
 
 If you need it, take a look at `collective.jqueryui.autocomplete`__ (or read it's documentation page
 to understand how cover this need).
