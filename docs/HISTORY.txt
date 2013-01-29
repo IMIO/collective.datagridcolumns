@@ -1,10 +1,10 @@
 Changelog
 =========
 
-0.3.3 (unreleased)
+0.4.0 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Added new column: DateColumn, that allows to add date values [cekk]
 
 
 0.3.2 (2012-10-17)
