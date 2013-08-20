@@ -1,9 +1,7 @@
 # -*- coding: utf-8 -*-
 
-# Zope imports
 from AccessControl import ClassSecurityInfo
 from Globals import InitializeClass
-
 from Products.DataGridField.Column import Column
 
 class TextAreaColumn(Column):

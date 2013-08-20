@@ -2,6 +2,7 @@
 
 from Products.CMFCore.utils import getToolByName
 from Products.Five.browser import BrowserView
+from Products.ZCTextIndex.ParseTree import ParseError
 
 try:
     import json
@@ -57,9 +58,12 @@ class DataGridAutocompleteView(BrowserView):
                       'path': path}
             if object_provides:
                 kwargs['object_provides'] = object_provides
-            results = catalog(**kwargs)
-            return json.dumps([{'label': x.Title,
-                                'value': x.UID,
-                                'path': x.getPath()} for x in results])
+            try:
+                results = catalog(**kwargs)
+                return json.dumps([{'label': x.Title,
+                                    'value': x.UID,
+                                    'path': x.getPath()} for x in results])
+            except ParseError:
+                pass
         return json.dumps([])
         

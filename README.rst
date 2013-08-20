@@ -1,11 +1,8 @@
-.. contents::
-
-Introduction
-============
-
-This is an additional set of **column types** for `DatagridField`__ product for Plone.
+An additional set of **column types** for `DatagridField`__ Plone product.
 
 __ http://plone.org/products/datagridfield
+
+.. contents::
 
 New columns
 ===========
@@ -71,7 +68,7 @@ Example::
     ...
 
 **Note**: the base *SelectColumn* of DataGridField 1.8 already have some kind of support for Zope-3-like
-vocabularies, however the use of it is not clean (and *this* version also works on Plone 3).
+vocabularies, however the use of that feature is not clear (and *this* version also works on Plone 3).
 
 ReferenceColumn
 ---------------
@@ -113,16 +110,15 @@ If you want something more, you can enable an additional JavaScript module and y
 
 So you will add to the default ``datagridwidget.js`` (automatically provided by the widget) a new
 ``datagridautocomplete.js`` ones.
+This will also required `jQueryUI autocomplete`__. Please, read also the "Dependencies" section below.
 
-When using autocomplete text field, you can query Plone in two different way:
+__ http://jqueryui.com/demos/autocomplete/
+
+When using autocomplete, you can query Plone in two different way:
 
 * starting a query with the "``/``" character will query documents by *path*, so you can manually
   surf the whole site.
 * starting as query with other character will perform a full-text query on titles.
-
-This will required `jQueryUI autocomplete`__. Please, read also the "Dependencies" section below.
-
-__ http://jqueryui.com/demos/autocomplete/
 
 Additional parameters:
 
@@ -136,13 +132,15 @@ Additional parameters:
     Choose to be able to search items in the site by full-text query or not.
     Default to True (allowed).
 
-
 DateColumn
---------------
+----------
 
-A simple column field that allows to insert some dates. This field supports jqueryui's datepicker plugin.
+A simple column field that allows to insert some dates. This field use `jQuery UI datepicker plugin`__.
 
-To use js datepicker plugin, you need to enable datepicker plugin of jqueryui (see above for infos) add an helper_js in the widget, like in the following example.
+__ http://jqueryui.com/datepicker/
+
+To use datepicker plugin you need to enable datepicker plugin of jQuery UI (see above for infos) and add an
+helper_js named ``datagriddatepicker.js`` in the widget. See the example below.
 
 Additional parameters:
 
@@ -159,7 +157,7 @@ Example::
                         columns={
                              'name' : Column(_(u"Name")),
                              'birthday' : DateColumn(_(u"Birthday"),
-                                                            date_format="dd/mm/yy"),
+                                                     date_format="dd/mm/yy"),
                         },
              ),
     ),
@@ -168,11 +166,13 @@ Example::
 Dependencies
 ============
 
-This product has been tested on *Plone 3.3* and *DataGridField 1.6*. Tests and feedback with
-Plone 4 and DataGridField 1.8 are welcome!
+This product has been tested on:
 
-jQuery
-------
+* *Plone 3.3* and *DataGridField 1.6*.
+* *Plone 4.2* and *DataGridField 1.8*.
+
+jQuery version (for Plone 3)
+----------------------------
 
 The *ReferenceColumn* need jQuery 1.4.1 or better to work. Plone 3.3 is shipped with jQuery
 1.3. You can fix this dependency by your how, or using a 3rd party library.
@@ -190,11 +190,14 @@ ReferenceColumn and DateColumn needs that Plone provide jQueryUI library. This p
 requirement, even by dependency.
 
 If you have already jQueryUI (autocomplete or datepicker) behaviour in your Plone site, you are already ok.
-
-If you need it, take a look at `collective.jqueryui.autocomplete`__ (or read it's documentation page
+If you don't, take a look at `collective.jqueryui.autocomplete`__ (or read it's documentation page
 to understand how cover this need).
 
 __ http://plone.org/products/collective.jqueryui.autocomplete
+
+Keep in mind that the standard way of providing jQueryUI support to Plone is by using `collective.js.jqueryui`__
+
+__ plone.org/products/collective.js.jqueryui
 
 Authors
 =======
@@ -204,11 +207,6 @@ This product was developed by RedTurtle Technology team.
 .. image:: http://www.redturtle.it/redturtle_banner.png
    :alt: RedTurtle Technology Site
    :target: http://www.redturtle.it/
-
-Contribute!
------------
-
-You are *welcome* to help us, contributing and adding new columns!
 
 Credits
 =======
