@@ -197,7 +197,7 @@ __ http://plone.org/products/collective.jqueryui.autocomplete
 
 Keep in mind that the standard way of providing jQueryUI support to Plone is by using `collective.js.jqueryui`__
 
-__ plone.org/products/collective.js.jqueryui
+__ http://plone.org/products/collective.js.jqueryui
 
 Authors
 =======
