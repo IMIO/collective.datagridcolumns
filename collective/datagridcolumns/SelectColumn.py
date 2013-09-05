@@ -17,14 +17,19 @@ class SelectColumn(BaseSelectColumn):
 
     security = ClassSecurityInfo()
 
-    def __init__(self, label, vocabulary=None, vocabulary_factory=None, default=None):
+    def __init__(self, label, vocabulary=None, vocabulary_factory=None, default=None, required=False):
         """ Create a SelectColumn
 
         @param vocabulary Vocabulary method name. This method is called
                from Archetypes instance to get values for dropdown list.
         """
         # do not call base SelectColumn constructor
-        Column.__init__(self, label, default=default)
+        if required:
+            # sorry for this trick, but we are using this product with a custom DataGridField 1.6.4
+            # see https://github.com/RedTurtle/Products.DataGridField/tree/1.6
+            Column.__init__(self, label, default=default, required=required)
+        else:
+            Column.__init__(self, label, default=default)
         self.vocabulary = vocabulary
         self.vocabulary_factory = vocabulary_factory
 
