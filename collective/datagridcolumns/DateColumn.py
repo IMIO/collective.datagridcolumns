@@ -9,8 +9,14 @@ from Products.DataGridField.Column import Column
 class DateColumn(Column):
     """ Defines column with calendar DataGridField """
 
-    def __init__(self, label, default=None, default_method=None, label_msgid=None, date_format="yy/mm/dd"):
-        Column.__init__(self, label, default, default_method, label_msgid)
+    def __init__(self, label, col_description=None, default=None, default_method=None,
+                 label_msgid=None, date_format="yy/mm/dd", required=False):
+        if col_description or required:
+            # sorry for this trick, but we are using this product with a custom DataGridField 1.6.4
+            # see https://github.com/RedTurtle/Products.DataGridField/tree/1.6
+            Column.__init__(self, label, col_description, default, default_method, label_msgid, required)
+        else:
+            Column.__init__(self, label, default, default_method, label_msgid)
         self.date_format = date_format
 
     security = ClassSecurityInfo()
