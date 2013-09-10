@@ -17,16 +17,14 @@ class ReferenceColumn(Column):
     security = ClassSecurityInfo()
 
     def __init__(self, label, col_descriptionNobe, default=None, default_method=None,
-                label_msgid=None, required=False, object_provides=[],
-                surf_site=True, search_site=True):
+                required=False, object_provides=[], surf_site=True, search_site=True):
         if required or col_description:
             # sorry for this trick, but we are using this product with a custom DataGridField 1.6.4
             # see https://github.com/RedTurtle/Products.DataGridField/tree/1.6
-            Column.__init__(self, label, col_description=col_description, default=default, default_method=default_method,
-                            label_msgid=label_msgid, required=required)
+            Column.__init__(self, label, col_description=col_description, default=default,
+                            default_method=default_method, required=required)
         else:
-            Column.__init__(self, label, default=default, default_method=default_method,
-                            label_msgid=label_msgid)
+            Column.__init__(self, label, default=default, default_method=default_method)
         self.object_provides = object_provides
         self.surf_site = surf_site
         self.search_site = search_site

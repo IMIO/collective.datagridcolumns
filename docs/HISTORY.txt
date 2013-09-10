@@ -1,13 +1,14 @@
 Changelog
 =========
 
-0.4.1 (unreleased)
+0.5.0 (unreleased)
 ------------------
 
 - Python code now support the new ``required`` method that has been added
   in version 1.9.0. Old DGF versions are still supported [keul]
 - Python code now support the new ``col_description`` method that has been added
   in version 1.9.0. Old DGF versions are still supported [keul]
+- Removed any reference to ``label_msgid``, unused by PloneFormGen also [keul]
 
 0.4.0 (2013-08-20)
 ------------------
