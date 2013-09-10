@@ -16,7 +16,7 @@ class ReferenceColumn(Column):
 
     security = ClassSecurityInfo()
 
-    def __init__(self, label, col_descriptionNobe, default=None, default_method=None,
+    def __init__(self, label, col_description=None, default=None, default_method=None,
                 required=False, object_provides=[], surf_site=True, search_site=True):
         if required or col_description:
             # sorry for this trick, but we are using this product with a custom DataGridField 1.6.4

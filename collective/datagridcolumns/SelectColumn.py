@@ -18,7 +18,7 @@ class SelectColumn(BaseSelectColumn):
     security = ClassSecurityInfo()
 
     def __init__(self, label, col_description=None, vocabulary=None, vocabulary_factory=None, default=None,
-                 default_method=default_method, required=False):
+                 default_method=None, required=False):
         """ Create a SelectColumn
 
         @param vocabulary Vocabulary method name. This method is called
