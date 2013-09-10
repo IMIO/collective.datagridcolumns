@@ -168,8 +168,8 @@ Dependencies
 
 This product has been tested on:
 
-* *Plone 3.3* and *DataGridField 1.6*.
-* *Plone 4.2* and *DataGridField 1.8*.
+* *Plone 3.3* and *DataGridField 1.6*
+* *Plone 4.2 and 4.3* and *DataGridField 1.8*
 
 jQuery version (for Plone 3)
 ----------------------------
@@ -211,8 +211,23 @@ This product was developed by RedTurtle Technology team.
 Credits
 =======
 
-Developed with the support of `Regione Emilia Romagna`__; Regione Emilia Romagna supports
-the `PloneGov initiative`__.
+Developed with the support of:
+
+
+* `Regione Emilia Romagna`__
+* `Azienda USL Ferrara`__
+  
+  .. image:: http://www.ausl.fe.it/logo_ausl.gif
+     :alt: Azienda USL's logo
+  
+* `S. Anna Hospital, Ferrara`__
+
+  .. image:: http://www.ospfe.it/ospfe-logo.jpg 
+     :alt: S. Anna Hospital logo
+
+All of them supports the `PloneGov initiative`__.
 
 __ http://www.regione.emilia-romagna.it/
+__ http://www.ausl.fe.it/
+__ http://www.ospfe.it/
 __ http://www.plonegov.it/

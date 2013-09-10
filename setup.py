@@ -5,6 +5,7 @@ version = '0.5.0'
 
 install_requires = [
     'setuptools',
+    # We still not force DataGridField>=1.9.0 because we want this on Plone 3.3 with some hack
     'Products.DataGridField',
     ]
 
@@ -24,6 +25,7 @@ setup(name='collective.datagridcolumns',
         "Framework :: Plone :: 4.0",
         "Framework :: Plone :: 4.1",
         "Framework :: Plone :: 4.2",
+        "Framework :: Plone :: 4.3",
         "Development Status :: 4 - Beta",
         "Programming Language :: Python",
         ],
