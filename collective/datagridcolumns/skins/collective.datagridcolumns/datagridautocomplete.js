@@ -1,5 +1,5 @@
 /*jslint vars: true, plusplus: true, maxerr: 50, indent: 4 */
-/*global jq: false, document: false, window: false */
+/*global jQuery: false, document: false, window: false */
 
 /**
  * JavaScript for the ReferenceColumn with autocomplete features
