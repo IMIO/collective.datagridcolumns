@@ -7,19 +7,19 @@
  * @author keul
  */
 
-(function(jq) {
+(function($) {
     if (!window.DATAGRIDFIELD_REFERENCE_ENABLED) {
     	/*
     	 * This trick help us to run the autocomplete only once
     	 * (if we have more than one ReferenceColumn in a page
     	 */
     	window.DATAGRIDFIELD_REFERENCE_ENABLED = true;
-    	jq(document).ready(function () {
+    	$(document).ready(function () {
     		/**
     		 * The first time we get the focus, we will enable the autocomplete 
     		 */
-    		jq('.dataGridAutocompleteColumn').live('focus', function () {
-    			var $this = jq(this);
+    		$('.dataGridAutocompleteColumn').live('focus', function () {
+    			var $this = $(this);
     			if (!$this.data('autocompleteEnabled')) {
     				if (window.console && window.console.info) {
     					window.console.info('Autocomplete enabled onto field');

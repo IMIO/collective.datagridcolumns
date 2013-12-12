@@ -7,19 +7,19 @@
  * @author cekk
  */
 
-(function(jq) {
+(function($) {
     if (!window.DATAGRIDFIELD_DATE_ENABLED) {
         /*
          * This trick help us to run the autocomplete only once
          * (if we have more than one ReferenceColumn in a page
          */
         window.DATAGRIDFIELD_DATE_ENABLED = true;
-        jq(document).ready(function () {
+        $(document).ready(function () {
             /**
              * The first time we get the focus, we will enable the date pickers
              */
-            jq('input.DataGridDatepicker').live('focus', function () {
-                var $this = jq(this);
+            $('input.DataGridDatepicker').live('focus', function () {
+                var $this = $(this);
                 if (!$this.data('datepickerEnabled')) {
                     if (window.console && window.console.info) {
                         window.console.info('Datepicker enabled onto field');
