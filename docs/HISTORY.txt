@@ -4,8 +4,7 @@ Changelog
 0.5.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
-
+- Fixed deprecated usage of ``jq`` JavaScript var [davidemoro]
 
 0.5.0 (2013-09-10)
 ------------------
