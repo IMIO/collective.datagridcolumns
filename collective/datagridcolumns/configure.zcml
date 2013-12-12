@@ -24,6 +24,13 @@
       description="Additional columns type for DataGridField"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
+  <genericsetup:registerProfile
+      name="uninstall"
+      title="collective.datagridcolumns: uninstall"
+      directory="profiles/uninstall"
+      description="Uninstall collective.datagridcolumns"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
 
   <genericsetup:registerProfile
       name="jquery"
