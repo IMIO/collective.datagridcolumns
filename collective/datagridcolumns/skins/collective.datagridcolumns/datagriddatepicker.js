@@ -8,28 +8,21 @@
  */
 
 (function($) {
-    if (!window.DATAGRIDFIELD_DATE_ENABLED) {
-        /*
-         * This trick help us to run the autocomplete only once
-         * (if we have more than one ReferenceColumn in a page
+    $(document).ready(function () {
+        /**
+         * The first time we get the focus, we will enable the date pickers
          */
-        window.DATAGRIDFIELD_DATE_ENABLED = true;
-        $(document).ready(function () {
-            /**
-             * The first time we get the focus, we will enable the date pickers
-             */
-            $('input.DataGridDatepicker').live('focus', function () {
-                var $this = $(this);
-                if (!$this.data('datepickerEnabled')) {
-                    if (window.console && window.console.info) {
-                        window.console.info('Datepicker enabled onto field');
-                        window.console.log($this);
-                    }
-                    $this.data('datepickerEnabled', true);
-                    $this.datepicker({ dateFormat: this.getAttribute('data-dateformat') });
+		$(".datagridwidget-table-edit").delegate("input.DataGridDatepicker", "focus", function(event) {
+            var $this = $(this);
+            if (!$this.data('datepickerEnabled')) {
+                if (window.console && window.console.info) {
+                    window.console.info('Datepicker enabled onto following field:');
+                    window.console.info($this);
                 }
-            });
+                $this.data('datepickerEnabled', true);
+                $this.datepicker({ dateFormat: this.getAttribute('data-dateformat') });
+            }
         });
-    }
+    });
 })(jQuery);
 

@@ -4,8 +4,9 @@ Changelog
 0.5.2 (unreleased)
 ------------------
 
-- Nothing changed yet.
-
+- Not use jQuery ``.live()`` anymore, but switched to ``.delegate()``.
+  We still not use ``.on()`` for keeping jQuery 1.4 compatibility.
+  [keul]
 
 0.5.1 (2013-12-12)
 ------------------
