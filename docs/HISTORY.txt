@@ -1,11 +1,13 @@
 Changelog
 =========
 
-0.5.2 (unreleased)
+0.6.0 (unreleased)
 ------------------
 
 - Not use jQuery ``.live()`` anymore, but switched to ``.delegate()``.
   We still not use ``.on()`` for keeping jQuery 1.4 compatibility.
+  [keul]
+- Added the ``MultiSelectColumn`` column
   [keul]
 
 0.5.1 (2013-12-12)

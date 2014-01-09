@@ -67,8 +67,8 @@ Example::
     ),
     ...
 
-**Note**: the base *SelectColumn* of DataGridField 1.8 already have some kind of support for Zope-3-like
-vocabularies, however the use of that feature is not clear (and *this* version also works on Plone 3).
+.. note:: The base *SelectColumn* of DataGridField 1.8 already have some kind of support for Zope-3-like
+          vocabularies, however the use of that feature is not clear (and *this* version also works on Plone 3).
 
 ReferenceColumn
 ---------------
@@ -162,6 +162,35 @@ Example::
              ),
     ),
     ...
+
+MultiSelectColumn
+-----------------
+
+Based on the *SelectColumn* from (from this package, not the original ones, so it support the 
+``vocabulary_factory`` parameter), show a list of checkboxes.
+
+Additional parameters: see all parameter from *SelectColumn*.
+
+Example::
+
+    ...
+    DataGridField('foo',
+              columns=("recipe_name", "recipe_options"),
+              widget = DataGridWidget(
+                        columns={
+                             'recipe_name' : Column(_(u"Name of the recipe"),),
+                             'recipe_options' : MultiSelectColumn(_(u"Type"),
+                                                                  vocabulary_factory='your.vocabulary',
+                                                                  ),
+                        },
+             ),
+    ),
+    ...
+
+.. warning:: This column suffer of the same limitations of *RadioColumn* and
+             *CheckboxColumn* columns (from original DataGridField).
+             
+             If you get a validation error when saving, **post data will not be reloaded** on the form itself.
 
 Dependencies
 ============

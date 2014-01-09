@@ -12,6 +12,7 @@ from Products.Archetypes import atapi
 from Products.DataGridField.Column import Column
 from Products.DataGridField.SelectColumn import SelectColumn as BaseSelectColumn
 
+
 class SelectColumn(BaseSelectColumn):
     """ Defines column with dropdown menu cells in DataGridField """
 
