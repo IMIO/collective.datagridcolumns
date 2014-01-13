@@ -167,7 +167,7 @@ MultiSelectColumn
 -----------------
 
 Based on the *SelectColumn* from (from this package, not the original ones, so it support the 
-``vocabulary_factory`` parameter), show a list of checkboxes.
+``vocabulary_factory`` parameter), show a list of checkboxes and store a list of selected entries.
 
 Additional parameters: see all parameter from *SelectColumn*.
 
@@ -177,6 +177,7 @@ Example::
     DataGridField('foo',
               columns=("recipe_name", "recipe_options"),
               widget = DataGridWidget(
+                        helper_js= ('datagridwidget.js', 'datagridwidget_patches.js', 'datagridmultiselect.js'),
                         columns={
                              'recipe_name' : Column(_(u"Name of the recipe"),),
                              'recipe_options' : MultiSelectColumn(_(u"Type"),
@@ -203,8 +204,8 @@ This product has been tested on:
 jQuery version (for Plone 3)
 ----------------------------
 
-Both *ReferenceColumn* and *DateColumn* need jQuery 1.4.2 or better to work. Plone 3.3 is shipped with jQuery
-1.3. You can fix this dependency by your how, or using a 3rd party library.
+Both *ReferenceColumn*, *DateColumn* and *MultiSelectColumn* need jQuery 1.4.2 or better to work.
+Plone 3.3 is shipped with jQuery 1.3. You can fix this dependency by your how, or using a 3rd party library.
 
 An alternative Generic Setup import step ("*DataGridField: register jQuery 1.4*") is provided
 with the product. Run this and the default Plone jQuery version will be disabled, then a

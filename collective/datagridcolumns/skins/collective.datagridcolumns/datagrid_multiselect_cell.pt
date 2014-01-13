@@ -17,7 +17,8 @@
     <!-- EDIT -->
     <metal:edit_cell_macro define-macro="edit_cell">
         <tal:values repeat="opt python:column_definition.getVocabulary(context).items()">
-           <div tal:define="opt_index repeat/opt/index;
+           <div class="dataGridMultiSelectCell"
+		        tal:define="opt_index repeat/opt/index;
 		                    opt_val python:opt[0];
 							opt_label python:opt[1];
 							">
@@ -36,7 +37,8 @@
    <!-- EMPTY EDIT -->
     <metal:edit_cell_macro define-macro="edit_empty_cell">
         <tal:values repeat="opt python:column_definition.getVocabulary(context).items()">
-           <div tal:define="opt_index repeat/opt/index;
+           <div class="dataGridMultiSelectCell"
+		        tal:define="opt_index repeat/opt/index;
 		                    opt_val python:opt[0];
 							opt_label python:opt[1];
 							">
