@@ -12,7 +12,7 @@
         /**
          * First time we get the focus, we will enable autocomplete on that field
          */
-		$(".datagridwidget-table-edit").delegate("input.dataGridAutocompleteColumn", "xxx", function(event) {
+		$(".datagridwidget-table-edit").delegate("input.dataGridAutocompleteColumn", "focus", function(event) {
 			var $this = $(this);
 			if (!$this.data('autocompleteEnabled')) {
 				if (window.console && window.console.info) {
