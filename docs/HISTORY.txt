@@ -4,8 +4,10 @@ Changelog
 0.6.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Soft-support for the field's ``title`` (see `pull request 12`__)
+  [keul]
 
+__ https://github.com/collective/Products.DataGridField/pull/12
 
 0.6.0 (2014-01-13)
 ------------------

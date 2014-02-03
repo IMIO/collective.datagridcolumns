@@ -18,17 +18,18 @@
     <metal:edit_cell_macro define-macro="edit_cell">
         <tal:values repeat="opt python:column_definition.getVocabulary(context).items()">
            <div class="dataGridMultiSelectCell"
-		        tal:define="opt_index repeat/opt/index;
-		                    opt_val python:opt[0];
-							opt_label python:opt[1];
-							">
+                tal:define="opt_index repeat/opt/index;
+                            opt_val python:opt[0];
+                            opt_label python:opt[1];
+                            ">
                <input class="noborder" type="checkbox" value="1" id="" style="width: auto;"
                       tal:attributes="name string:${fieldName}.${column}.${opt_val}.${repeat/rows/number};
-					                  id string:${fieldName}_${column}_${opt_val}_${repeat/rows/number}_${opt_index};
-									  checked python:opt_val in rows.get(column, []) and 'checked' or False;
-									  "/>
+                                      id string:${fieldName}_${column}_${opt_val}_${repeat/rows/number}_${opt_index};
+                                      title column_label|nothing;
+                                      checked python:opt_val in rows.get(column, []) and 'checked' or False;
+                                      "/>
                <label for="" tal:attributes="for string:${fieldName}_${column}_${opt_val}_${repeat/rows/number}_${opt_index}"
-			                 tal:content="opt_label"></label>
+                             tal:content="opt_label"></label>
             </div>
         </tal:values>
     </metal:edit_cell_macro>
@@ -38,16 +39,18 @@
     <metal:edit_cell_macro define-macro="edit_empty_cell">
         <tal:values repeat="opt python:column_definition.getVocabulary(context).items()">
            <div class="dataGridMultiSelectCell"
-		        tal:define="opt_index repeat/opt/index;
-		                    opt_val python:opt[0];
-							opt_label python:opt[1];
-							">
+                tal:define="opt_index repeat/opt/index;
+                            opt_val python:opt[0];
+                            opt_label python:opt[1];
+                            ">
                <input class="noborder" type="checkbox" value="1" id="" style="width: auto;"
                       tal:attributes="name string:${fieldName}.${column}.${opt_val}.999999;
-					                  id string:${fieldName}_${column}_${opt_val}_999999_${opt_index}"
+                                      id string:${fieldName}_${column}_${opt_val}_999999_${opt_index}
+                                      title column_label|nothing;
+                                      "
                     />
                <label for="" tal:attributes="for string:${fieldName}_${column}_${opt_val}_999999_${opt_index}"
-			                 tal:content="opt_label"></label>
+                             tal:content="opt_label"></label>
             </div>
         </tal:values>
     </metal:edit_cell_macro>

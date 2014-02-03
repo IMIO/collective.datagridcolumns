@@ -21,6 +21,7 @@
               class="DataGridDatepicker"
               tal:attributes="name string:${fieldName}.${column}:records;
                               id string:${column}_${fieldId};
+                              title column_label|nothing;
                               value cell_value;
                               onchange eventHandler;
                               data-dateformat column_definition/date_format; 
@@ -33,7 +34,8 @@
        <input style="width: 100%" name="myfield.name:records" 
               class="DataGridDatepicker"
                tal:attributes="name string:${fieldName}.${column}:records;
-                               id string:${column}_${fieldId};                                     
+                               id string:${column}_${fieldId};
+                               title column_label|nothing;
                                value python: column_definition.getDefault(here);
                                onchange eventHandler;
                                data-dateformat column_definition/date_format;
