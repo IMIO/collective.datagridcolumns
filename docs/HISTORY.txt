@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.6.1 (unreleased)
+0.6.1 (2014-02-06)
 ------------------
 
 - Soft-support for the field's ``title`` (see `pull request 12`__)
