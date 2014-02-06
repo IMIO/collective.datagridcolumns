@@ -25,7 +25,7 @@
 
 			$('.datagridwidget-add-button').each(function() {
 				// Backing up old function inline in HTML
-				var onclickOldFun = $(this).attr('onclick');
+				var onclickOldFun = this.onclick;
 				// Clearing old function inline in HTML
 				this.onclick = null;
 				// Re-adding old function in morern way
