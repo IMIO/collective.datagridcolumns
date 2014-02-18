@@ -8,7 +8,7 @@
 
     <!-- VIEW -->
     <metal:view_cell_macro define-macro="view_cell">
-      <tal:target define="target python:column_definition.getTarget(context, cell_value);">                
+      <tal:target define="target python:column_definition.getTarget(context, cell_value);">
           <a tal:condition="nocall:target"
              tal:attributes="href target/absolute_url;
                              description target/Description;"
@@ -22,19 +22,19 @@
 
     <!-- EDIT COMMONS -->
     <metal:edit_cell_macro define-macro="edit_common">
-        <div style="display:none" class="edit_common"
-             tal:attributes="data-context-call python:column_definition.getAJAXCallingContext(context);
+        <span style="display:none" class="edit_common"
+                     tal:attributes="data-context-call python:column_definition.getAJAXCallingContext(context);
                              data-object-provides column_definition/getAllowedInterfaces;
                              data-surf-site python:column_definition.surfSite() and 'true' or '';
                              data-search-site python:column_definition.searchSite() and 'true' or '';">
-        </div>
+        </span>
     </metal:edit_cell_macro>
 
     <!-- EDIT -->
     <metal:edit_cell_macro define-macro="edit_cell"
        tal:define="target python:column_definition.getTarget(context, cell_value);">
        <tal:view_row metal:use-macro="here/datagrid_reference_cell/macros/edit_common"/>
-       <input name="myfield.name:records" 
+       <input name="myfield.name:records"
               tal:attributes="name string:${fieldName}.${column}:records;
                               id string:${column}_${fieldId};
                               value cell_value;
@@ -42,14 +42,14 @@
                        type="hidden" />
        <input name="myfield.name:records"
               class="dataGridAutocompleteColumn"
-              style="width: 100%" 
+              style="width: 100%"
               tal:attributes="name string:model-${fieldName}.${column}:records;
                               title column_label|nothing;
                               value python: target and target.Title() or '';
                               "
                        type="text" />
     </metal:edit_cell_macro>
-    
+
    <!-- EMPTY EDIT -->
     <metal:edit_empty_cell_macro define-macro="edit_empty_cell"
        tal:define="default python:column_definition.getDefault(context);
@@ -70,10 +70,7 @@
                               "
                        type="text" />
     </metal:edit_empty_cell_macro>
-    
-    
 
 </body>
 
 </html>
-
