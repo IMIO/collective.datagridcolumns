@@ -5,6 +5,7 @@ Changelog
 ------------------
 
 - HTML validation fix. Transformed hidden ``div`` to ``span``
+  [keul]
 
 0.6.1 (2014-02-06)
 ------------------
