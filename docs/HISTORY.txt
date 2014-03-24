@@ -4,7 +4,9 @@ Changelog
 0.6.3 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Display the selected values in the MultiSelectColumn view macro
+  instead of displaying a special char ("V")
+  [gbastien]
 
 
 0.6.2 (2014-02-19)
