@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.6.3 (unreleased)
+0.7.0 (2015-05-22)
 ------------------
 
 - Display the selected values in the MultiSelectColumn view macro
