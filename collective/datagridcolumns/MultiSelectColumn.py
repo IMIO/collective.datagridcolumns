@@ -2,12 +2,8 @@
 
 from AccessControl import ClassSecurityInfo
 from Globals import InitializeClass
-from Products.Archetypes import atapi
 from Products.DataGridField.Column import Column
 from collective.datagridcolumns.SelectColumn import SelectColumn
-from zope import schema
-from zope.component import getUtility
-from zope.component.interfaces import ComponentLookupError
 
 
 class MultiSelectColumn(SelectColumn):
