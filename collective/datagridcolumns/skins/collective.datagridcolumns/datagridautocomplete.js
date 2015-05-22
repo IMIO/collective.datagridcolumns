@@ -32,6 +32,14 @@
 					}
 				}
 
+				var workflow_states = configuration.attr('data-workflow-states');
+				if (workflow_states) {
+					workflow_states = workflow_states.split(',');
+					for (i = 0; i < workflow_states.length; i++) {
+						query.push('workflow_states:list=' + workflow_states[i]);
+					}
+				}
+
 				var search_site = configuration.attr('data-search-site');
 				var surf_site = configuration.attr('data-surf-site');
 				if (search_site) {
