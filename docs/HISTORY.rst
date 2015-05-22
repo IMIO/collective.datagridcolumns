@@ -7,7 +7,7 @@ Changelog
 - Display the selected values in the MultiSelectColumn view macro
   instead of displaying a special char ("V")
   [gbastien]
-- ReferenceColumn - Add ``workflow_states``  parameter
+- ReferenceColumn - Add ``workflow_states`` parameter
   [sdelcourt]
 
 

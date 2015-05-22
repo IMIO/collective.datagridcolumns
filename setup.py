@@ -16,7 +16,7 @@ setup(name='collective.datagridcolumns',
       version=version,
       description="Additional columns for Plone and DataGridField",
       long_description=open("README.rst").read() + "\n" +
-                       open(os.path.join("docs", "HISTORY.txt")).read(),
+                       open(os.path.join("docs", "HISTORY.rst")).read(),
       # Get more strings from
       # http://pypi.python.org/pypi?:action=list_classifiers
       classifiers=[
@@ -26,7 +26,7 @@ setup(name='collective.datagridcolumns',
         "Framework :: Plone :: 4.1",
         "Framework :: Plone :: 4.2",
         "Framework :: Plone :: 4.3",
-        "Development Status :: 4 - Beta",
+        "Development Status :: 5 - Production/Stable",
         "Programming Language :: Python",
         ],
       keywords='plonegov plone datagridfield archetypes jqueryui widget',
