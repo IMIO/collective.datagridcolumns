@@ -11,15 +11,15 @@ except ImportError:
 
 class DataGridAutocompleteView(BrowserView):
     """Return a search on the site for referenced objects
-    
+
     It commonly return a JSON with results
-    
+
     The view need a "term" parameter
-    
+
     An optional "origin" parameter can give to the view the traversal path of the calling context
-    
+
     """
-    
+
     def __call__(self, *args, **kw):
         context = self.context
         request = self.request
@@ -34,7 +34,8 @@ class DataGridAutocompleteView(BrowserView):
         object_provides = request.get('object_provides')
         search_site = request.get('search_site')
         surf_site = request.get('surf_site')
-        
+        workflow_states = request.get('workflow_states')
+
         # PATH search
         if term.startswith('/') and surf_site:
             portal = getToolByName(context, 'portal_url').getPortalObject()
@@ -58,6 +59,8 @@ class DataGridAutocompleteView(BrowserView):
                       'path': path}
             if object_provides:
                 kwargs['object_provides'] = object_provides
+            if workflow_states:
+                kwargs['review_state'] = workflow_states
             try:
                 results = catalog(**kwargs)
                 return json.dumps([{'label': x.Title,
@@ -66,4 +69,4 @@ class DataGridAutocompleteView(BrowserView):
             except ParseError:
                 pass
         return json.dumps([])
-        
+

@@ -17,7 +17,8 @@ class ReferenceColumn(Column):
     security = ClassSecurityInfo()
 
     def __init__(self, label, col_description=None, default=None, default_method=None,
-                required=False, object_provides=[], surf_site=True, search_site=True):
+                required=False, object_provides=[], workflow_states=[], surf_site=True,
+                search_site=True):
         if required or col_description:
             # sorry for this trick, but we are using this product with a custom DataGridField 1.6.4
             # see https://github.com/RedTurtle/Products.DataGridField/tree/1.6
@@ -26,6 +27,7 @@ class ReferenceColumn(Column):
         else:
             Column.__init__(self, label, default=default, default_method=default_method)
         self.object_provides = object_provides
+        self.workflow_states = workflow_states
         self.surf_site = surf_site
         self.search_site = search_site
 
@@ -53,6 +55,12 @@ class ReferenceColumn(Column):
     def getAllowedInterfaces(self):
         """ Return the a proper comma separated strings of object_provides values """
         return ','.join(self.object_provides)
+
+    security.declarePublic('getAllowedStates')
+
+    def getAllowedStates(self):
+        """ Return the a proper comma separated strings of workflow_states values """
+        return ','.join(self.workflow_states)
 
     security.declarePublic('surfSite')
 

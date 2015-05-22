@@ -25,6 +25,7 @@
         <span style="display:none" class="edit_common"
                      tal:attributes="data-context-call python:column_definition.getAJAXCallingContext(context);
                              data-object-provides column_definition/getAllowedInterfaces;
+                             data-workflow-states column_definition/getAllowedStates;
                              data-surf-site python:column_definition.surfSite() and 'true' or '';
                              data-search-site python:column_definition.searchSite() and 'true' or '';">
         </span>
