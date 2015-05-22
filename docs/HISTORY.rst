@@ -9,7 +9,8 @@ Changelog
   [gbastien]
 - ReferenceColumn - Add ``workflow_states`` parameter
   [sdelcourt]
-
+- Fixed MANIFEST
+  [keul]
 
 0.6.2 (2014-02-19)
 ------------------
