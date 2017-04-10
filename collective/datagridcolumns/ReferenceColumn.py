@@ -18,7 +18,7 @@ class ReferenceColumn(Column):
 
     def __init__(self, label, col_description=None, default=None, default_method=None,
                 required=False, object_provides=[], workflow_states=[], surf_site=True,
-                search_site=True):
+                search_site=True, title_index='Title'):
         if required or col_description:
             # sorry for this trick, but we are using this product with a custom DataGridField 1.6.4
             # see https://github.com/RedTurtle/Products.DataGridField/tree/1.6
@@ -28,6 +28,7 @@ class ReferenceColumn(Column):
             Column.__init__(self, label, default=default, default_method=default_method)
         self.object_provides = object_provides
         self.workflow_states = workflow_states
+        self.title_index = title_index
         self.surf_site = surf_site
         self.search_site = search_site
 
@@ -49,6 +50,11 @@ class ReferenceColumn(Column):
         if cell_value:
             reference_catalog = getToolByName(context, 'reference_catalog')
             return reference_catalog.lookupObject(cell_value)
+
+    security.declarePublic('getTitleIndex')
+
+    def getTitleIndex(self):
+        return self.title_index
 
     security.declarePublic('getAllowedInterfaces')
 

@@ -31,6 +31,7 @@ class DataGridAutocompleteView(BrowserView):
         response.addHeader("Pragma", "no-cache")
 
         term = request.get('term', '').lstrip()
+        title_index = request.get('title_index', 'Title')
         object_provides = request.get('object_provides')
         search_site = request.get('search_site')
         surf_site = request.get('surf_site')
@@ -53,7 +54,7 @@ class DataGridAutocompleteView(BrowserView):
         elif term and search_site: # term must be something
             terms = term.strip().split()
             path = '/'.join(context.getPhysicalPath())
-            kwargs = {'Title': ' AND '.join(["%s*" % x for x in terms]),
+            kwargs = {title_index: ' AND '.join(["%s*" % x for x in terms]),
                       'sort_on': 'sortable_title',
                       'sort_order': 'reverse',
                       'path': path}

@@ -24,6 +24,11 @@
 				var contextCall = configuration.attr('data-context-call') + '/dataGridAutocomplete';
 				var query = [], i = 0;
 
+				var title_index = configuration.attr('data-title-index');
+				if (title_index) {
+					query.push('title_index='+title_index);
+				}
+
 				var object_provides = configuration.attr('data-object-provides');
 				if (object_provides) {
 					object_provides = object_provides.split(',');
